@@ -1,6 +1,9 @@
-# Welcome to MkDocs
+---
+description: The official documentation for AtlasOS
+icon: material/home
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# :material-home: WinTuning Documentation
 
 ## Commands
 

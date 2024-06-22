@@ -1,39 +1,102 @@
-site_name: Docs
+######################
+#                    #
+#     WinTuning      #
+#     mkdocs.yml     #
+#                    #
+######################
+
+# Basic Settings
+site_name: WinTuning
+site_url: http://127.0.0.1:8000
+
+# Github Repo Information
+# https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository
+repo_url: https://github.com/DevSentinel/WinTuning
+repo_name: WinTuning
+edit_uri: edit/master/docs
+
+#
+# Theme Settings
+#
 theme:
+  # https://squidfunk.github.io/mkdocs-material/customization/#setup-and-theme-structure
   name: material
-  language: en
+
   features:
-    - content.code.annotate
-    - content.code.copy
-    - content.tabs.link
-    - header.autohide
-    - announce.dismiss
-    # Navigation Related
-    # - navigation.footer
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#setting-up-navigation
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.path
     - navigation.indexes
-    - navigation.sections
-    - navigation.tabs
     - navigation.top
+    - navigation.tabs
+    - navigation.sections
     - navigation.tracking
-    # Search Related
-    - search.highlight
-    - search.share
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+    - navigation.prune
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#table-of-contents
+    - toc.follow
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-suggestions
     - search.suggest
+    - search.highlight
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    - content.action.edit
+    - content.action.view
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#configuration
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+
+  plugins:
+    - typeset
+    - search
 
   palette:
 
     # Palette toggle for dark mode
     - scheme: slate
-      primary: black
-      accent: deep orange
+      primary: blue
+      accent: light blue
       toggle:
-        icon: material/weather-night
+        icon: material/weather-sunny
         name: Switch to light mode
         
     # Palette toggle for light mode
     - scheme: default
       primary: blue
-      accent: deep orange
+      accent: light blue
       toggle:
-        icon: material/weather-sunny
+        icon: material/weather-night
         name: Switch to dark mode
+
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts
+  font:
+    text: Inter
+    code: Chivo Mono
+
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language
+  language: en
+
+extra_css:
+  - stylesheets/theme.v3.css
+
+markdown_extensions:
+
+  # Admonitions 
+  # https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  # Tooltips
+  # https://squidfunk.github.io/mkdocs-material/reference/tooltips/
+  - abbr
+  # attr_list used for buttons aswell
+  - attr_list
+  - pymdownx.snippets
+
+  # Icons, Emojis
+  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
